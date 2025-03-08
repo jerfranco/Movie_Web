@@ -1,0 +1,30 @@
+* {
+    margin: none;
+    color: black;
+}
+
+#homeHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    border-bottom: black solid 1px;
+}
+
+nav ul {
+    text-align: center;
+}
+
+nav li {
+    list-style-type: none;
+}
+
+nav a {
+    padding-right: 1rem;
+    text-decoration: none;
+}
+
+nav a:hover {
+    border-bottom: black solid 1px;
+}
