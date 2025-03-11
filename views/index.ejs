@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type=text/css href="/base.css">
+    <title><%= pageTitle %></title>
+</head>
+<body id="indexBody">
+    <header id="homeHeader">
+        <h2><a href="#"><%= pageTitle %></a></h2>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/login">Login</a>
+                    <a href="/signup">Sign up</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="genre">
+            <h3>Genre</h3>
+            <img alt="img"> 
+            <img alt="img">
+            <img alt="img">
+            <img alt="img">
+        </div>
+        <div id="searchMovie">
+            <input type="text" id="search" name="search" placeholder="Enter Movie Name Here">
+            <button id="searchButton"><img src="/searchIcon.png"></button>
+            <img src="/searchIcon.png" alt="test">
+        </div>
+        <div id="popMovies">
+            <h2>Popular Movies</h2>
+            <ul>
+                <% popularMovies.forEach(movie => { %>
+                    <li><%= movie %></li>
+                <% }) %>
+            </ul>
+        </div>
+    </main>
+    
+    <footer>
+        <h2>Footer</h2>
+    </footer>
+</body>
+</html>
