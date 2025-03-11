@@ -105,16 +105,25 @@ main {
 
 #searchMovie input {
     width: 35%;
+    height: 50px;
+    padding: 0 10px;
+    border: 1px solid grey;
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    outline: none;
 }
 
 #searchMovie button {
-    width: 5%; /* Adjust as needed */
+    width: 60px;
+    height: 50px;
     background-color: grey;
-    display: flex; /* Use Flexbox */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    padding: 0; /* Remove default padding */
-    border: none; /* Remove default border */
+    border: 1px solid grey;
+    border-left: none;
+    border-radius: 0 10px 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
     cursor: pointer;
 }
 
@@ -163,6 +172,10 @@ main {
     border-radius: 10px;
 }
 
+#login p {
+    text-align: center;
+}
+
 #login label {
     padding-top: 2rem;
 }
@@ -205,4 +218,42 @@ button#signup {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+
+#signupMain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#signupForm {
+    display: flex;
+    flex-direction: column;
+    /* border: black 1px solid; */
+    width: 25%;
+    /* justify-self: center; */
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#signupForm label {
+    padding-top: 2rem;
+}
+
+#signupForm input {
+    height: 40px;
+}
+
+#signupForm button {
+    margin-top: 2rem;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
 }
