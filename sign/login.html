@@ -6,9 +6,9 @@
     <title>Login</title>
     <link rel="stylesheet" href="../css/base.css">
 </head>
-<body>
+<body id="loginBody">
     <header id="homeHeader">
-        <h2>Movie Website</h2>
+        <h2><a href="../index.html">Movie Website</a></h2>
         <nav>
             <ul>
                 <li>
@@ -18,16 +18,24 @@
             </ul>
         </nav>
     </header>
-    <section id="loginSection">
-        <form id="login">
-            <h2>Login</h2>
-            <label for="user">Username: </label>
-            <input type="text" id="user" name="user" required>
-            <label for="pass">Password: </label>
-            <input type="text" id="pass" name="pass" required>
-            <button id="loginSubmit">Login</button>
-        </form>
-    </section>
+    <main id="loginMain">
+        <section id="loginSection">
+            <form id="login">
+                <!-- <h2>Login</h2> -->
+                <label for="user">Email/Username</label>
+                <input type="text" id="user" name="user" required>
+                <label for="pass">Password </label>
+                <input type="text" id="pass" name="pass" required>
+                <button id="loginSubmit">Login</button>
+                <p>No Account?</p>
+                <button id="signup">Signup</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <h2>Footer</h2>
+    </footer>
+    
     
 </body>
 </html>
