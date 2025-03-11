@@ -1,6 +1,7 @@
 * {
     margin: none;
     color: black;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #homeHeader {
@@ -10,10 +11,6 @@
     margin-left: 5rem;
     margin-right: 5rem;
     border-bottom: black solid 1px;
-}
-
-nav ul {
-    text-align: center;
 }
 
 nav li {
@@ -27,4 +24,39 @@ nav a {
 
 nav a:hover {
     border-bottom: black solid 1px;
+}
+
+#loginSection {
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login {
+    display: flex;
+    flex-direction: column;
+    border: black 1px solid;
+    width: 25%;
+    /* justify-self: center; */
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#login button {
+    margin-top: 2rem;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+}
+
+form h2 {
+    text-align: center;
 }
