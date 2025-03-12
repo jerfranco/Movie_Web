@@ -236,6 +236,11 @@ button#signup {
     cursor: pointer;
 }
 
+#login label {
+    padding-bottom: 1rem;
+    font-weight: bold;
+}
+
 
 
 
@@ -286,4 +291,9 @@ button#signup {
     border: none;
     border-radius: 15px;
     color: black;
+}
+
+#signupForm label {
+    padding-bottom: 1rem;
+    font-weight: bold;
 }
