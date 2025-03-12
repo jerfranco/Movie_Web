@@ -10,11 +10,7 @@ app.use(express.static("images"));
 
 
 app.get('/', (req, res) => {
-    const data = {
-        pageTitle: 'Movie Website',
-        popularMovies: ['Movie 1', 'Movie 2', 'Movie 3'],
-    };
-    res.render('index', data);
+    res.render('index');
 });
 
 app.get('/login', (req, res) => {

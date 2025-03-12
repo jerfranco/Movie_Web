@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type=text/css href="/base.css">
-    <title><%= pageTitle %></title>
+    <title>Movie</title>
 </head>
 <body id="indexBody">
     <header id="homeHeader">
-        <h2><a href="#"><%= pageTitle %></a></h2>
+        <h2><a href="#">Movie Website</a></h2>
         <nav>
             <ul>
                 <li>
@@ -33,11 +33,6 @@
         </div>
         <div id="popMovies">
             <h2>Popular Movies</h2>
-            <ul>
-                <% popularMovies.forEach(movie => { %>
-                    <li><%= movie %></li>
-                <% }) %>
-            </ul>
         </div>
     </main>
     

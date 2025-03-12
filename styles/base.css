@@ -138,6 +138,11 @@ main {
 
 
 
+
+
+
+
+
 /*! LOGIN PAGE CSS */
 
 #loginBody {
@@ -200,11 +205,13 @@ main {
 #loginSubmit {
     background-color: green;
     margin-bottom: 1rem;
+    cursor: pointer;
 }
 
 button#signup {
     color: black;
     margin-top: 1rem;
+    cursor: pointer;
 }
 
 
@@ -256,4 +263,5 @@ button#signup {
     font-weight: bold;
     border: none;
     border-radius: 15px;
+    color: black;
 }
