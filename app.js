@@ -7,6 +7,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.static("styles"));
 app.use(express.static("images"));
+app.use(express.static("scripts"));
 
 
 app.get('/', (req, res) => {
@@ -19,6 +20,10 @@ app.get('/login', (req, res) => {
 
 app.get('/signup', (req, res) => {
     res.render('signup');
+})
+
+app.get('/dashboard', (req, res) => {
+    res.render('dashboard');
 })
 
 app.listen(port, () => {

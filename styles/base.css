@@ -8,6 +8,7 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style-type: none;
+    padding: 0;
 }
 
 #homeHeader {
@@ -296,4 +297,117 @@ button#signup {
 #signupForm label {
     padding-bottom: 1rem;
     font-weight: bold;
+}
+
+
+
+
+
+/*! DASHBOARD CSS */
+
+#dashBody {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#dashMain {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 2rem;
+}
+
+#dashMain h2 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+#watchlist ul {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    /* padding: 2rem; */
+    text-align: center;
+    /* border: black solid 1px; */
+    padding: 0;
+}
+
+#watchHeading li {
+    padding: 1rem;
+}
+
+/* #watchlist li:not(:first-child) {
+    padding: 5rem;
+} */
+
+#watchlist ul li {
+    border: black solid 1px;
+}
+
+/* #watchlist > ul:not(#watchHeading) {
+    min-height: 100px;
+} */
+
+#watchlist > ul:not(#watchHeading) li {
+    padding: 5rem;
+}
+
+#watchlist > ul:not(#watchHeading) #checkbox {
+    padding: 5rem;
+}
+
+#checkbox {
+    border: black solid 1px;
+}
+
+#review ul {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    /* padding: 0; */
+    /* border: black solid 1px; */
+    text-align: center;
+}
+
+#reviewHeading li{
+    /* padding: 500px; */
+    padding: 1rem;
+}
+
+#review > ul:not(#reviewHeading) li {
+    padding: 5rem;
+}
+
+#review li {
+    border: black solid 1px;
+}
+
+.card {
+    padding: 4rem;
+    border: black solid 1px;
+    font-size: 23.5px;
+}
+
+.star {
+/* font-size: 10vh; */
+cursor: pointer;
+}
+
+.one {
+color: rgb(255, 0, 0);
+}
+
+.two {
+color: rgb(255, 106, 0);
+}
+
+.three {
+color: #fccf00;
+}
+
+.four {
+color: rgb(255, 255, 0);
+}
+
+.five {
+color: rgb(24, 159, 14);
 }
