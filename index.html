@@ -1,58 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type=text/css href="styles/base.css">
-    <title>Movie</title>
-</head>
-<body id="indexBody">
-    <header id="homeHeader">
-        <h2><a href="#">Movie Website</a></h2>
-        <nav>
-            <ul>
-                <li>
-                    <a href="/user/login.html">Login</a>
-                    <a href="user/signup.html">Sign up</a>
-                    <a href="user/dashboard.html">Dashboard</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <div id="genre">
-            <h3>Genre</h3>
-            <a href="#"><img src="images/action-genre.svg" alt="Action Genre"></a>
-            <a href="#"><img src="images/comedy-genre.svg" alt="Comedy Genre"></a>
-            <a href="#"><img src="images/horror-genre.svg" alt="Horror Genre"></a>
-            <a href="#"><img src="images/sci_fi-genre.svg" alt="Sci-Fi Genre"></a>
-        </div>
-        <div id="searchMovie">
-            <input type="text" id="search" name="search" placeholder="Enter Movie Name Here">
-            <button id="searchButton"><img src="images/searchIcon.png"></button>
-            <!-- <img src="images/searchIcon.png" alt="test"> -->
-        </div>
-        <div id="popMovies">
-            <h2>Popular Movies</h2>
-            <ul>
-                <li>
-                    <img alt="img">
-                    <h3>Movie Name</h3>
-                </li>
-                <li>
-                    <img alt="img">
-                    <h3>Movie Name</h3>
-                </li>
-                <li>
-                    <img alt="img">
-                    <h3>Movie Name</h3>
-                </li>
-            </ul>
-        </div>
-    </main>
-    
-    <footer>
-        <h2>Footer</h2>
-    </footer>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Svelte</title>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div id="app"></div>
+    <div id="footer"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>
