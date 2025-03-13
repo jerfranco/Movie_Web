@@ -98,8 +98,8 @@ main {
 }
 
 #genre img {
-    border: black solid 1px;
-    margin: 5%;
+    width: 40px;
+    margin: 40px;
 }
 
 #searchMovie {
