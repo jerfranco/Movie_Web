@@ -1,39 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="../styles/base.css">
-</head>
-<body id="loginBody">
-    <header id="homeHeader">
-        <h2><a href="/">Movie Website</a></h2>
-        <nav>
-            <ul>
-                <li>
-                    <a href="#">Login</a>
-                    <a href="signup.html">Sign up</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <main id="loginMain">
-        <section id="loginSection">
-            <form id="login">
-                <!-- <h2>Login</h2> -->
-                <label for="user">Email/Username</label>
-                <input type="text" id="user" name="user" required>
-                <label for="pass">Password </label>
-                <input type="password" id="pass" name="pass" required>
-                <button id="loginSubmit">Login</button>
-                <p>No Account?</p>
-                <button id="signup" onclick="window.location.href='/signup.html';">Signup</button>
-            </form>
-        </section>
-    </main>
-    <footer>
-        <h2>Footer</h2>
-    </footer>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <!-- <link rel="stylesheet" href="../styles/base.css"> -->
+    </head>
+    <body id="loginBody">
+        <div id="header"></div>
+        <div id="login"></div>
+        <div id="footer"></div>
+        <script type="module" src="/src/scripts/login.js"></script>
+    </body>
 </html>
