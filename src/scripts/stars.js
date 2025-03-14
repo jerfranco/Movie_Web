@@ -7,7 +7,7 @@ let output =
 	document.getElementById("output");
 
 // Funtion to update rating
-function gfg(n, card) {
+export function gfg(n, card) {
     // Get all stars within the clicked card
     let stars = card.getElementsByClassName("star");
 
