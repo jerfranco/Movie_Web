@@ -1,13 +1,10 @@
 html, body {
     height: 100%;
+    background-color: #ffffff;
 }
-
-
-/*! HEADER PAGE CSS */
 
 * {
     margin: 0;
-    color: black;
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
     text-decoration: none;
@@ -15,6 +12,7 @@ html, body {
     padding: 0;
 }
 
+/*! HEADER PAGE CSS */
 #homeHeader {
     display: flex;
     justify-content: space-between;
@@ -22,21 +20,38 @@ html, body {
     /* margin-left: 5rem; */
     /* margin-right: 5rem; */
     padding: 1.5rem 5rem;
-    border-bottom: black solid 1px;
+    background-color: #2C3E50;
+}
+
+#homeHeader a:link,
+#homeHeader a:visited,
+#homeHeader a:hover,
+#homeHeader a:active {
+    color: #ffffff;
+    text-decoration: none; /* Remove underline */
 }
 
 nav li {
     list-style-type: none;
 }
 
+/* LOGIN AND SIGN UP BUTTONS */
 nav li a:first-child {
-    background-color: lightblue;
+    background-color: #2563EB;
     border-radius: 10px;
 }
 
+nav li a:first-child:hover {
+    background-color: #1E40AF;
+}
+
 nav li a:nth-child(2) {
-    border: lightblue 1px solid;
+    border: #2563EB 1px solid;
     border-radius: 10px;
+}
+
+nav li a:nth-child(2):hover {
+    border-color: #1E40AF;
 }
 
 nav a {
@@ -53,35 +68,17 @@ nav a {
 } */
 
 
-
-
-
-
-
-
-
+/*! MAIN CSS */
 
 /*! FOOTER CSS */
-
 footer {
     padding: 1.5rem 5rem;
-    border: black solid 1px;
+    background-color: #2C3E50;
+    color: #ffffff;
+    font-size: 10px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 /*! INDEX PAGE CSS */
-
 #indexBody {
     display: flex;
     flex-direction: column;
@@ -94,20 +91,34 @@ footer {
     flex-grow: 1;
 }
 
-
 #genre {
     display: flex;
-    /* padding-top: 5%;
-    padding-bottom: 50px; */
-    height: 133px;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    gap: 30px;
+    margin-top: 130px;
+}
+
+#genre a {
+    display: inline-block;
+    padding: 12px; /* Slightly larger padding */
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#genre a:hover {
+    border-color: #1E40AF; /* Darker shade on hover */
+    transform: scale(1.05); /* Slight zoom effect */
 }
 
 #genre img {
     width: 40px;
-    margin: 40px;
+    display: block;
 }
+
 
 #searchMovie {
     display: flex;
@@ -130,8 +141,8 @@ footer {
 #searchMovie button {
     width: 60px;
     height: 50px;
-    background-color: grey;
-    border: 1px solid grey;
+    background-color: #2563EB;
+    border: 1px solid #2563EB;
     border-left: none;
     border-radius: 0 10px 10px 0;
     display: flex;
@@ -166,15 +177,7 @@ footer {
     padding: 0.5rem;
 }
 
-
-
-
-
-
-
-
 /*! LOGIN PAGE CSS */
-
 #loginBody {
     display: flex;
     flex-direction: column;
@@ -227,23 +230,28 @@ footer {
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
-
     color: white;
     font-weight: bold;
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 #loginSubmit {
-    background-color: green;
+    background-color: #2563EB;
     margin-bottom: 1rem;
     cursor: pointer;
 }
 
+#loginSubmit:hover {
+    background-color: #1E40AF;
+}
+
 button#signup {
     color: black;
+    border: #2563EB 1px solid;
     margin-top: 1rem;
     cursor: pointer;
+    background-color: white
 }
 
 #login label {
@@ -251,13 +259,7 @@ button#signup {
     font-weight: bold;
 }
 
-
-
-
-
-
 /*! SIGNUP CSS */
-
 #signup {
     flex-grow: 1;
 }
@@ -299,12 +301,15 @@ button#signup {
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
-
+    background-color: #2563EB;
     color: white;
     font-weight: bold;
     border: none;
-    border-radius: 15px;
-    color: black;
+    border-radius: 10px;
+}
+
+#signupForm button:hover {
+    background-color: #1E40AF
 }
 
 #signupForm label {
@@ -312,12 +317,7 @@ button#signup {
     font-weight: bold;
 }
 
-
-
-
-
 /*! DASHBOARD CSS */
-
 #dashBody {
     display: flex;
     flex-direction: column;
