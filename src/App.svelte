@@ -1,3 +1,16 @@
+<script>
+    import Search from './components/Search.svelte';
+    import { writable } from 'svelte/store';
+
+    // Create a writable store for the search query
+    export let searchQuery = writable("");
+    let searchComponent;
+
+    async function handleSearch() {
+        searchQuery.set(document.getElementById('search').value);
+        await searchComponent.fetchMovies();
+    }
+</script>
 
 <main>
   <div id="genre">
@@ -8,25 +21,14 @@
       <a href="#"><img src="src/images/sci_fi-genre.svg" alt="Sci-Fi Genre"></a>
   </div>
   <div id="searchMovie">
-      <input type="text" id="search" name="search" placeholder="Enter Movie Name Here">
-      <button id="searchButton"><img src="src/images/searchIcon.png"></button>
-      <!-- <img src="images/searchIcon.png" alt="test"> -->
+      <input type="text" id="search" name="search" placeholder="Enter Movie Name Here" bind:value={$searchQuery}>
+      <button id="searchButton" on:click={handleSearch}>
+          <img src="src/images/searchIcon.png">
+      </button>
   </div>
-  <div id="popMovies">
-      <h2>Popular Movies</h2>
-      <ul>
-          <li>
-              <img alt="img">
-              <h3>Movie Name</h3>
-          </li>
-          <li>
-              <img alt="img">
-              <h3>Movie Name</h3>
-          </li>
-          <li>
-              <img alt="img">
-              <h3>Movie Name</h3>
-          </li>
-      </ul>
+
+  <div id="searchDisplay">
+      <h2>Search Results</h2>
+      <Search bind:this={searchComponent} {searchQuery} />
   </div>
 </main>

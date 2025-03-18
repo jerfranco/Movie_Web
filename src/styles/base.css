@@ -156,12 +156,12 @@ footer {
     width: 25px;
 }
 
-#popMovies {
+#searchDisplay {
     text-align: center;
     padding-top: 3%;
 }
 
-#popMovies ul {
+#searchDisplay ul {
     padding: 0;
     width: 65%;
     display: grid;
@@ -170,7 +170,7 @@ footer {
     margin-right: auto;
 }
 
-#popMovies ul li {
+#searchDisplay ul li {
     margin: 1rem;
     border: black solid 1px;
     border-radius: 10px;
