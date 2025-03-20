@@ -1,20 +1,20 @@
 <script>
   import { onMount } from "svelte";
-  import { fetchPopularMovies } from "/src/scripts/popularMovies";
+  import fetchPopularMovies from './components/PopularMovies.svelte';
 
-  let movies = [];
-  let isLoading = true;
-  let error = null;
+//   let movies = [];
+//   let isLoading = true;
+//   let error = null;
 
-  onMount(async () => {
-    try {
-      movies = await fetchPopularMovies();
-    } catch (err) {
-      error = err.message;
-    } finally {
-      isLoading = false;
-    }
-  });
+//   onMount(async () => {
+//     try {
+//       movies = await fetchPopularMovies();
+//     } catch (err) {
+//       error = err.message;
+//     } finally {
+//       isLoading = false;
+//     }
+//   });
 </script>
 
 <main>
@@ -35,7 +35,7 @@
     <button id="searchButton"><img src="src/images/searchIcon.png" /></button>
     <!-- <img src="images/searchIcon.png" alt="test"> -->
   </div>
-  <div id="popMovies">
+  <!-- <div id="popMovies">
     <h2>Popular Movies of 2024</h2>
     {#if isLoading}
       <p>Loading movies...</p>
@@ -51,10 +51,10 @@
         {/each}
       </ul>
     {/if}
-  </div>
+  </div> -->
 </main>
 
-<style>
+<!-- <style>
     #popMovies {
       text-align: center;
       padding-top: 3%;
@@ -80,4 +80,4 @@
       height: auto;
       border-radius: 10px;
     }
-  </style>
+  </style> -->
