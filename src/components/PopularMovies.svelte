@@ -1,10 +1,11 @@
 <script>
+  import { onMount } from "svelte";
   const API_KEY = "a55bc385"; // Your activated API key
   const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}`;
 
-  let movies = [];
-  let isLoading = true;
-  let error = null;
+  let movies = $state([]);
+  let isLoading = $state(true);
+  let error = $state(null);
 
   onMount(async () => {
     try {
@@ -16,7 +17,7 @@
     }
   });
 
-  export async function fetchMovieDetails(imdbID) {
+  async function fetchMovieDetails(imdbID) {
     const response = await fetch(`${API_URL}&i=${imdbID}`);
     if (!response.ok) {
       throw new Error(`Failed to fetch movie details: ${response.status}`);
@@ -28,7 +29,7 @@
     return data;
   }
 
-  export async function fetchPopularMovies() {
+  async function fetchPopularMovies() {
     const allPopularMovies = [
       "tt15239678", // Dune: Part Two
       "tt8999762", // The Brutalist
@@ -47,16 +48,16 @@
     const shuffledMovies = allPopularMovies.sort(() => 0.5 - Math.random());
     const selectedMovies = shuffledMovies.slice(0, 3);
 
-    const movies = [];
+    const movieList = [];
     for (const imdbID of selectedMovies) {
       try {
         const movie = await fetchMovieDetails(imdbID);
-        movies.push(movie);
+        movieList.push(movie);
       } catch (error) {
         console.error(error.message);
       }
     }
-
+    movies = movieList;
     return movies;
   }
 </script>
