@@ -43,6 +43,7 @@
       "tt16280912", // Humane
       "tt13899250", // Bloodline Killer
       "tt28763074", // Dancing Village: The Curse Begins
+      // link for the 2024 horror movies: https://www.imdb.com/list/ls569954808/
     ];
 
     const shuffledHorrorMovies = allHorrorMovies.sort(() => 0.5 - Math.random());

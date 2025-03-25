@@ -2,8 +2,10 @@
   import { onMount } from "svelte";
   import PopularMovies from "./components/PopularMovies.svelte";
   import HorrorMovies from "./components/HorrorGenre.svelte";
+  import SciFiMovies from "./components/SciFiGenre.svelte";
 
-  let showHorror = $state(false);
+  let showHorrorMovies = $state(false);
+  let showSciFiMovies = $state(false);
 </script>
 
 <main>
@@ -21,14 +23,18 @@
           <img src="src/images/horror-genre.svg" alt="Horror" />
           <span class="genre-label">Horror</span>
         </a> -->
-        <a href="#" class="genre-item" on:click|preventDefault={() => showHorror = true}>
+        <a href="#" class="genre-item" on:click|preventDefault={() => showHorrorMovies = true}>
             <img src="src/images/horror-genre.svg" alt="Horror" />
             <span class="genre-label">Horror</span>
           </a>
-        <a href="#" class="genre-item">
+        <!-- <a href="#" class="genre-item">
           <img src="src/images/sci_fi-genre.svg" alt="Sci-Fi" />
           <span class="genre-label">Sci-Fi</span>
-        </a>
+        </a> -->
+        <a href="#" class="genre-item" on:click|preventDefault={() => showSciFiMovies = true}>
+            <img src="src/images/sci_fi-genre.svg" alt="Sci-Fi" />
+            <span class="genre-label">Sci-Fi</span>
+          </a>
       </div>
 
   <div id="searchMovie">
@@ -43,8 +49,10 @@
   </div>
 
   <div id="popMovies">
-    {#if showHorror}
+    {#if showHorrorMovies}
       <HorrorMovies />
+    {:else if showSciFiMovies}
+      <SciFiMovies />
     {:else}
       <PopularMovies />
     {/if}
