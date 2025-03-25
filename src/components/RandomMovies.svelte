@@ -108,10 +108,6 @@
     "tt12361974", // Zack Snyder's Justice League
   ];
 
-  onMount(() => {
-    fetchMoviesByGenre("default");
-  });
-
   async function fetchMoviesByGenre(genre) {
     try {
       isLoading = true;
@@ -191,21 +187,6 @@
   #randomMovies {
     text-align: center;
     padding-top: 3%;
-  }
-
-  .genre-buttons {
-    margin-bottom: 1rem;
-  }
-
-  .genre-buttons button {
-    font-size: 1rem;
-    margin: 0.5rem;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
   }
 
   #randomMovies ul {
