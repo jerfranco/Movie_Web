@@ -1,16 +1,36 @@
 <script>
   import { onMount } from "svelte";
   import PopularMovies from "./components/PopularMovies.svelte";
+  import HorrorMovies from "./components/HorrorGenre.svelte";
+
+  let showHorror = $state(false);
 </script>
 
 <main>
-  <div id="genre">
-    <h3>Genre</h3>
-    <a href="#"><img src="src/images/action-genre.svg" alt="Action Genre" /></a>
-    <a href="#"><img src="src/images/comedy-genre.svg" alt="Comedy Genre" /></a>
-    <a href="#"><img src="src/images/horror-genre.svg" alt="Horror Genre" /></a>
-    <a href="#"><img src="src/images/sci_fi-genre.svg" alt="Sci-Fi Genre" /></a>
-  </div>
+    <div id="genre">
+        <h3>Genre</h3>
+        <a href="#" class="genre-item">
+          <img src="src/images/action-genre.svg" alt="Action" />
+          <span class="genre-label">Action</span>
+        </a>
+        <a href="#" class="genre-item">
+          <img src="src/images/comedy-genre.svg" alt="Comedy" />
+          <span class="genre-label">Comedy</span>
+        </a>
+        <!-- <a href="#" class="genre-item">
+          <img src="src/images/horror-genre.svg" alt="Horror" />
+          <span class="genre-label">Horror</span>
+        </a> -->
+        <a href="#" class="genre-item" on:click|preventDefault={() => showHorror = true}>
+            <img src="src/images/horror-genre.svg" alt="Horror" />
+            <span class="genre-label">Horror</span>
+          </a>
+        <a href="#" class="genre-item">
+          <img src="src/images/sci_fi-genre.svg" alt="Sci-Fi" />
+          <span class="genre-label">Sci-Fi</span>
+        </a>
+      </div>
+
   <div id="searchMovie">
     <input
       type="text"
@@ -21,7 +41,12 @@
     <button id="searchButton"><img src="src/images/searchIcon.png" /></button>
     <!-- <img src="images/searchIcon.png" alt="test"> -->
   </div>
+
   <div id="popMovies">
-    <PopularMovies />
+    {#if showHorror}
+      <HorrorMovies />
+    {:else}
+      <PopularMovies />
+    {/if}
   </div>
 </main>
