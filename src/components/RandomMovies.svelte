@@ -6,6 +6,7 @@
   let displayedMovies = [];
   let isLoading = false;
   let error = null;
+  let genreTitle = "Random Movies";
 
   const movieIDs = [
     "tt6263850", // Moonfall
@@ -112,6 +113,10 @@
     try {
       isLoading = true;
       error = null;
+
+      // Update the genre title
+      genreTitle = genre.charAt(0).toUpperCase() + genre.slice(1);
+
       let genreList;
       switch (genre) {
         case "action":
@@ -128,6 +133,7 @@
           break;
         default:
           genreList = movieIDs;
+          genreTitle = "Random Movies"; // Reset title for default
       }
       const shuffledMovies = genreList.sort(() => 0.5 - Math.random());
       const selectedMovies = shuffledMovies.slice(0, 9);
@@ -165,7 +171,7 @@
 </script>
 
 <div id="randomMovies">
-  <h2>Random Movies</h2>
+  <h2>{genreTitle}</h2>
 
   {#if isLoading}
     <p>Loading movies...</p>
