@@ -21,6 +21,7 @@
 </script>
 
 <div id="popMovies">
+  <h2>Search Results</h2>
   <ul>
     {#each movies as movie}
       <li>
