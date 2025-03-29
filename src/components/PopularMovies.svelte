@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import MovieDetails from "./MovieDetails.svelte";
   
-  const API_KEY = "a55bc385"; // Your activated API key
+  const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
   const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}`;
 
   let movies = $state([]);
