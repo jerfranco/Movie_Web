@@ -1,7 +1,7 @@
 import { Client } from 'pg';
 
 const client = new Client({
-    connectionString: 'postgresql://postgres:nY6FBsIkdvMEoZcw@db.iwfnjafqjesjmlzfgkts.supabase.co:5432/postgres',
+    connectionString: import.meta.env.POSTGRE_CONNECTION,
     ssl: { rejectUnauthorized: false } // Required for Supabase
 });
 
