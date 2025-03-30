@@ -12,6 +12,11 @@ html, body {
     padding: 0;
 }
 
+
+
+
+
+
 /*! HEADER PAGE CSS */
 #homeHeader {
     display: flex;
@@ -29,6 +34,16 @@ html, body {
 #homeHeader a:active {
     color: #ffffff;
     text-decoration: none; /* Remove underline */
+}
+
+#homeHeader button {
+    background-color: #2563EB;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem 3.5vw;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 nav li {
