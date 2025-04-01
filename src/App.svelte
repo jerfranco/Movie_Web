@@ -4,6 +4,7 @@
   import Search from "./components/Search.svelte";
   import RandomMovies from "./components/RandomMovies.svelte";
   import { writable } from "svelte/store";
+  import { supabase } from "./scripts/supabase";
 
   export let searchQuery = writable("");
   let searchComponent;
@@ -46,6 +47,24 @@
     await tick(); // Wait for Svelte to update the DOM
     fetchFunction();
   }
+
+  let user = null;
+  
+    onMount(async () => {
+      const { data } = await supabase.auth.getUser();
+      user = data.user;
+  
+      // Listen for auth state changes
+      supabase.auth.onAuthStateChange((_event, session) => {
+        user = session?.user || null;
+      });
+    });
+  
+    async function handleLogout() {
+      await supabase.auth.signOut();
+      user = null;
+      window.location.reload(); // Refresh to update UI
+    }
 </script>
 
 <main>

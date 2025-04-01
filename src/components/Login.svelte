@@ -16,8 +16,7 @@
     if (error) {
       errorMessage = error.message;
     } else {
-      alert("Login successful!");
-      window.location.href = "/"; // Redirect to home page
+      window.location.href = "/"; // Redirect to home page without alert
     }
   }
 </script>

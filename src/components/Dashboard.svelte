@@ -48,7 +48,7 @@
         </ul>
     </div>
 
-    <h2>Review</h2>
+    <!-- <h2>Review</h2>
     <div id="review">
         <ul id="reviewHeading">
         <li>Movie</li>
@@ -64,7 +64,7 @@
             <span on:click={() => gfg(3, this.parentElement)} class="star">★</span>
             <span on:click={() => gfg(4, this.parentElement)} class="star">★</span>
             <span on:click={() => gfg(5, this.parentElement)} class="star">★</span>
-            <div class="output"></div> <!-- Optional: Add output for each card -->
+            <div class="output"></div>
         </div>
         <li>Review</li>
         <li>Actions</li>
@@ -77,7 +77,7 @@
             <span on:click={() => gfg(3, this.parentElement)} class="star">★</span>
             <span on:click={() => gfg(4, this.parentElement)} class="star">★</span>
             <span on:click={() => gfg(5, this.parentElement)} class="star">★</span>
-            <div class="output"></div> <!-- Optional: Add output for each card -->
+            <div class="output"></div>
         </div>
         <li>Review</li>
         <li>Actions</li>
@@ -90,12 +90,12 @@
             <span on:click={() => gfg(3, this.parentElement)} class="star">★</span>
             <span on:click={() => gfg(4, this.parentElement)} class="star">★</span>
             <span on:click={() => gfg(5, this.parentElement)} class="star">★</span>
-            <div class="output"></div> <!-- Optional: Add output for each card -->
+            <div class="output"></div>
         </div>
         <li>Review</li>
         <li>Actions</li>
         </ul>
-    </div>
+    </div> -->
 </main>
 
 <style>
