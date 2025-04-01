@@ -37,7 +37,7 @@
           user_id: user.id,
           movie_id: movie.imdbID,
           title: movie.Title,
-          poster: movie.Poster,
+          // poster: movie.Poster,
           year: movie.Year
         });
 
