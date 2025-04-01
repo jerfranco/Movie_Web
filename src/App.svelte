@@ -91,6 +91,7 @@
       name="search"
       placeholder="Enter Movie Name Here"
       bind:value={$searchQuery}
+      on:keydown={(e) => e.key === 'Enter' && switchViewAndFetch("search", handleSearch)}
     />
     <button
       id="searchButton"
