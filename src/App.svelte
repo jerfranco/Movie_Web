@@ -13,7 +13,7 @@
   let error = null;
   let currentView = "popular"; // Default view
 
-  const API_KEY = "a55bc385"; // Your activated API key
+  const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
   const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}`;
 
   async function handleSearch() {
