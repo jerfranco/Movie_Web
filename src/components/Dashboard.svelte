@@ -1,138 +1,133 @@
 <script>
-    import { gfg } from '../scripts/stars.js';
-    
+  import { gfg } from "../scripts/stars.js";
+  import { supabase } from "../scripts/supabase";
+  import { onMount } from "svelte";
+
+  let watchlist = [];
+  let loading = true;
+  let error = null;
+
+  // Fetch user's watchlist (now a reusable function)
+  async function fetchWatchlist() {
+    loading = true;
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) return;
+
+      const { data, error: fetchError } = await supabase
+        .from("watchlist")
+        .select("*")
+        .eq("user_id", user.id);
+
+      if (fetchError) throw fetchError;
+      watchlist = data || [];
+    } catch (err) {
+      error = err.message;
+    } finally {
+      loading = false;
+    }
+  }
+
+  // Load watchlist on mount
+  onMount(fetchWatchlist);
+
+  // Update watched status
+  async function toggleWatched(movieId, isWatched) {
+    const { error } = await supabase
+      .from("watchlist")
+      .update({ watched: isWatched })
+      .eq("movie_id", movieId);
+
+    if (error) alert("Error updating status");
+    else fetchWatchlist(); // Refresh the list
+  }
+
+  async function deleteMovie(movieId) {
+    if (confirm('Are you sure you want to remove this from your watchlist?')) {
+      const { error } = await supabase
+        .from('watchlist')
+        .delete()
+        .eq('movie_id', movieId);
+      
+      if (error) {
+        alert('Error deleting movie');
+      } else {
+        fetchWatchlist();
+      }
+    }
+  }
 </script>
 
-
 <main id="dashMain">
-<h2>Watchlist</h2>
+  <h2>Watchlist</h2>
+  {#if loading}
+    <p>Loading your watchlist...</p>
+  {:else if error}
+    <p class="error">Error: {error}</p>
+  {:else if watchlist.length === 0}
+    <p>Your watchlist is empty</p>
+  {:else}
     <div id="watchlist">
-        <ul id="watchHeading">
+      <ul id="watchHeading">
         <li>Poster</li>
         <li>Title</li>
         <li>Year</li>
         <li>Watched?</li>
-        </ul>
-        <ul>
-        <li>Poster</li>
-        <li>Title</li>
-        <li>Year</li>
-        <div id="checkbox">
-            <input type="checkbox" id="yes" name="yes" />
-            <label for="watched">Yes</label>
-            <input type="checkbox" id="no" name="no" />
-            <label for="no">No</label>
-        </div>
-        </ul>
-        <ul>
-        <li>Poster</li>
-        <li>Title</li>
-        <li>Year</li>
-        <div id="checkbox">
-            <input type="checkbox" id="yes" name="yes" />
-            <label for="watched">Yes</label>
-            <input type="checkbox" id="no" name="no" />
-            <label for="no">No</label>
-        </div>
-        </ul>
-        <ul>
-        <li>Poster</li>
-        <li>Title</li>
-        <li>Year</li>
-        <div id="checkbox">
-            <input type="checkbox" id="yes" name="yes" />
-            <label for="watched">Yes</label>
-            <input type="checkbox" id="no" name="no" />
-            <label for="no">No</label>
-        </div>
-        </ul>
-    </div>
+      </ul>
 
-    <!-- <h2>Review</h2>
-    <div id="review">
-        <ul id="reviewHeading">
-        <li>Movie</li>
-        <li>Rating</li>
-        <li>Review</li>
-        <li>Actions</li>
-        </ul>
+      {#each watchlist as movie}
         <ul>
-        <li>Movie</li>
-        <div class="card">
-            <span on:click={() => gfg(1, this.parentElement)} class="star">★</span>
-            <span on:click={() => gfg(2, this.parentElement)} class="star">★</span>
-            <span on:click={() => gfg(3, this.parentElement)} class="star">★</span>
-            <span on:click={() => gfg(4, this.parentElement)} class="star">★</span>
-            <span on:click={() => gfg(5, this.parentElement)} class="star">★</span>
-            <div class="output"></div>
-        </div>
-        <li>Review</li>
-        <li>Actions</li>
+          <li>
+            {#if movie.poster}
+              <img src={movie.poster} alt={movie.title} width="50" />
+            {:else}
+              No poster
+            {/if}
+          </li>
+          <li>{movie.title}</li>
+          <li>{movie.year}</li>
+          <li>
+            <label>
+              <input
+                type="checkbox"
+                checked={movie.watched || false}
+                on:change={() => toggleWatched(movie.movie_id, !movie.watched)}
+              />
+              Watched
+            </label>
+            <button 
+      on:click={() => deleteMovie(movie.movie_id)} 
+      class="delete-btn"
+      title="Remove from watchlist"
+    >
+      Delete
+    </button>
+          </li>
         </ul>
-        <ul>
-        <li>Movie</li>
-        <div class="card">
-            <span on:click={() => gfg(1, this.parentElement)} class="star">★</span>
-            <span on:click={() => gfg(2, this.parentElement)} class="star">★</span>
-            <span on:click={() => gfg(3, this.parentElement)} class="star">★</span>
-            <span on:click={() => gfg(4, this.parentElement)} class="star">★</span>
-            <span on:click={() => gfg(5, this.parentElement)} class="star">★</span>
-            <div class="output"></div>
-        </div>
-        <li>Review</li>
-        <li>Actions</li>
-        </ul>
-        <ul>
-        <li>Movie</li>
-        <div class="card">
-            <span on:click={() => gfg(1, this.parentElement)} class="star">★</span>
-            <span on:click={() => gfg(2, this.parentElement)} class="star">★</span>
-            <span on:click={() => gfg(3, this.parentElement)} class="star">★</span>
-            <span on:click={() => gfg(4, this.parentElement)} class="star">★</span>
-            <span on:click={() => gfg(5, this.parentElement)} class="star">★</span>
-            <div class="output"></div>
-        </div>
-        <li>Review</li>
-        <li>Actions</li>
-        </ul>
-    </div> -->
+      {/each}
+    </div>
+  {/if}
 </main>
 
 <style>
-    .card {
-      padding: 4rem;
-      border: black solid 1px;
-      font-size: 23.5px;
-    }
+  .error {
+    color: red;
+  }
+  #watchlist img {
+    max-height: 75px;
+  }
+
+  .delete-btn {
+    background: #ff4757;
+    color: white;
+    border: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
   
-    .star {
-      cursor: pointer;
-      font-size: 23px; /* Added font-size for consistency */
-    }
-  
-    .one {
-      color: rgb(255, 0, 0);
-    }
-  
-    .two {
-      color: rgb(255, 106, 0);
-    }
-  
-    .three {
-      color: #fccf00;
-    }
-  
-    .four {
-      color: rgb(255, 255, 0);
-    }
-  
-    .five {
-      color: rgb(24, 159, 14);
-    }
-  
-    .output {
-      margin-top: 10px;
-      font-size: 14px;
-      color: #333;
-    }
-  </style>
+  .delete-btn:hover {
+    background: #e84118;
+  }
+</style>
