@@ -6,6 +6,12 @@
   import { writable } from "svelte/store";
   import { supabase } from "./scripts/supabase";
 
+  // Import images
+  import actionGenre from "./images/action-genre.svg";
+  import comedyGenre from "./images/comedy-genre.svg";
+  import horrorGenre from "./images/horror-genre.svg";
+  import sciFiGenre from "./images/sci_fi-genre.svg";
+
   export let searchQuery = writable("");
   let searchComponent;
   let randomMoviesComponent;
@@ -49,22 +55,22 @@
   }
 
   let user = null;
-  
-    onMount(async () => {
-      const { data } = await supabase.auth.getUser();
-      user = data.user;
-  
-      // Listen for auth state changes
-      supabase.auth.onAuthStateChange((_event, session) => {
-        user = session?.user || null;
-      });
+
+  onMount(async () => {
+    const { data } = await supabase.auth.getUser();
+    user = data.user;
+
+    // Listen for auth state changes
+    supabase.auth.onAuthStateChange((_event, session) => {
+      user = session?.user || null;
     });
-  
-    async function handleLogout() {
-      await supabase.auth.signOut();
-      user = null;
-      window.location.reload(); // Refresh to update UI
-    }
+  });
+
+  async function handleLogout() {
+    await supabase.auth.signOut();
+    user = null;
+    window.location.reload(); // Refresh to update UI
+  }
 </script>
 
 <main>
@@ -76,7 +82,7 @@
           randomMoviesComponent.fetchMoviesByGenre("action")
         )}
     >
-      <img src="src/images/action-genre.svg" alt="Action Genre" />
+      <img src={actionGenre} alt="Action Genre" />
     </a>
     <a
       on:click={() =>
@@ -84,7 +90,7 @@
           randomMoviesComponent.fetchMoviesByGenre("comedy")
         )}
     >
-      <img src="src/images/comedy-genre.svg" alt="Comedy Genre" />
+      <img src={comedyGenre} alt="Comedy Genre" />
     </a>
     <a
       on:click={() =>
@@ -92,7 +98,7 @@
           randomMoviesComponent.fetchMoviesByGenre("horror")
         )}
     >
-      <img src="src/images/horror-genre.svg" alt="Horror Genre" />
+      <img src={horrorGenre} alt="Horror Genre" />
     </a>
     <a
       on:click={() =>
@@ -100,7 +106,7 @@
           randomMoviesComponent.fetchMoviesByGenre("sci-fi")
         )}
     >
-      <img src="src/images/sci_fi-genre.svg" alt="Sci-Fi Genre" />
+      <img src={sciFiGenre} alt="Sci-Fi Genre" />
     </a>
   </div>
   <div id="searchMovie">
@@ -110,13 +116,14 @@
       name="search"
       placeholder="Enter Movie Name Here"
       bind:value={$searchQuery}
-      on:keydown={(e) => e.key === 'Enter' && switchViewAndFetch("search", handleSearch)}
+      on:keydown={(e) =>
+        e.key === "Enter" && switchViewAndFetch("search", handleSearch)}
     />
     <button
       id="searchButton"
       on:click={() => switchViewAndFetch("search", handleSearch)}
     >
-      <img src="src/images/searchIcon.png" />
+      <img src={sciFiGenre} />
     </button>
   </div>
   <div id="popMovies">
