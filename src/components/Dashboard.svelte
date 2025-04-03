@@ -59,7 +59,7 @@
   {:else}
     <div id="watchlist">
       <ul id="watchHeading">
-        <li>Poster</li>
+        <!-- <li>Poster</li> -->
         <li>Title</li>
         <li>Year</li>
         <li>Action</li>
@@ -67,13 +67,13 @@
 
       {#each watchlist as movie}
         <ul>
-          <li>
+          <!-- <li>
             {#if movie.poster}
               <img src={movie.poster} alt={movie.title} width="50" />
             {:else}
               No poster
             {/if}
-          </li>
+          </li> -->
           <li>{movie.title}</li>
           <li>{movie.year}</li>
           <li>
