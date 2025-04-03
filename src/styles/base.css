@@ -312,6 +312,12 @@ button#signup {
 }
 
 /*! DASHBOARD CSS */
+
+#dashboard {
+    display: flex;
+    flex-grow: 1;
+}
+
 #dashBody {
     display: flex;
     flex-direction: column;
