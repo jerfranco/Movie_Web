@@ -27,12 +27,12 @@
             {#if user}
                 <li>
                     <button on:click={handleLogout}>Logout</button>
-                    <a href="/src/user/dashboard.html">Dashboard</a>
+                    <a href="/user/dashboard.html">Dashboard</a>
                 </li>
             {:else}
                 <li>
-                    <a href="/src/user/login.html">Login</a>
-                    <a href="/src/user/signup.html">Sign up</a>
+                    <a href="/user/login.html">Login</a>
+                    <a href="/user/signup.html">Sign up</a>
                 </li>
             {/if}
             
