@@ -31,17 +31,7 @@
   // Load watchlist on mount
   onMount(fetchWatchlist);
 
-  // Update watched status
-  async function toggleWatched(movieId, isWatched) {
-    const { error } = await supabase
-      .from("watchlist")
-      .update({ watched: isWatched })
-      .eq("movie_id", movieId);
-
-    if (error) alert("Error updating status");
-    else fetchWatchlist(); // Refresh the list
-  }
-
+  // Delete movie
   async function deleteMovie(movieId) {
     if (confirm('Are you sure you want to remove this from your watchlist?')) {
       const { error } = await supabase
@@ -72,7 +62,7 @@
         <li>Poster</li>
         <li>Title</li>
         <li>Year</li>
-        <li>Watched?</li>
+        <li>Action</li>
       </ul>
 
       {#each watchlist as movie}
@@ -87,20 +77,12 @@
           <li>{movie.title}</li>
           <li>{movie.year}</li>
           <li>
-            <label>
-              <input
-                type="checkbox"
-                checked={movie.watched || false}
-                on:change={() => toggleWatched(movie.movie_id, !movie.watched)}
-              />
-              Watched
-            </label>
             <button 
       on:click={() => deleteMovie(movie.movie_id)} 
       class="delete-btn"
       title="Remove from watchlist"
     >
-      Delete
+      Remove from Watchlist
     </button>
           </li>
         </ul>
