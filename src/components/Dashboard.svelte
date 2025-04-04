@@ -93,23 +93,34 @@
 
 <style>
   .error {
-    color: red;
-  }
-  #watchlist img {
-    max-height: 75px;
+    color: #e63946;
+    font-weight: 600;
+    margin: 0.5rem 0;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
   }
 
   .delete-btn {
-    background: #ff4757;
+    background: #2563EB;
     color: white;
     border: none;
-    padding: 0.3rem 0.6rem;
-    border-radius: 4px;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
-  
+
   .delete-btn:hover {
-    background: #e84118;
+    background: #1b48aa;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .delete-btn:active {
+    transform: scale(0.98);
   }
 </style>
+

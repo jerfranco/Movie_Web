@@ -33,7 +33,7 @@ html, body {
 #homeHeader a:hover,
 #homeHeader a:active {
     color: #ffffff;
-    text-decoration: none; /* Remove underline */
+    text-decoration: none;
 }
 
 #homeHeader button {
@@ -78,10 +78,6 @@ nav a {
     font-weight: bold;
 }
 
-/* nav a:hover {
-    border-bottom: black solid 1px;
-} */
-
 
 /*! MAIN CSS */
 
@@ -117,7 +113,7 @@ footer {
 
 #genre a {
     display: inline-block;
-    padding: 12px; /* Slightly larger padding */
+    padding: 12px;
     border: 1px solid white;
     border-radius: 10px;
     background-color: white;
@@ -125,8 +121,8 @@ footer {
 }
 
 #genre a:hover {
-    border-color: #1E40AF; /* Darker shade on hover */
-    transform: scale(1.05); /* Slight zoom effect */
+    border-color: #1E40AF;
+    transform: scale(1.05);
 }
 
 #genre img {
