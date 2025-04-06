@@ -212,6 +212,7 @@ footer {
 
 #login input {
     height: 40px;
+    padding: 10px;
 }
 
 #login button {
@@ -236,12 +237,12 @@ footer {
     background-color: #1E40AF;
 }
 
-button#signup {
-    color: black;
-    border: #2563EB 1px solid;
+#signupSubmit {
+    color: black!important;
+    border: #2563EB 1px solid!important;;
     margin-top: 1rem;
     cursor: pointer;
-    background-color: white
+    background-color:white;
 }
 
 #login label {

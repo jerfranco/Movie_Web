@@ -127,18 +127,6 @@
     width: 90%;
     max-height: 90vh;
     overflow-y: auto;
-    animation: fadeInUp 0.4s ease;
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
 
   .movie-details {
@@ -177,7 +165,6 @@
 
   .details p {
     margin: 0.5rem 0;
-    word-break: break-word;
   }
 
   .details p:nth-of-type(3) {
