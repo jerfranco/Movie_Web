@@ -36,7 +36,7 @@
 
       <button type="submit" id="loginSubmit">Login</button>
       <p>No Account?</p>
-      <button type="button" on:click={() => window.location.href = 'signup.html'}>Signup</button>
+      <button type="button" id="signupSubmit" on:click={() => window.location.href = 'signup.html'}>Signup</button>
     </form>
   </section>
 </main>

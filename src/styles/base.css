@@ -33,7 +33,7 @@ html, body {
 #homeHeader a:hover,
 #homeHeader a:active {
     color: #ffffff;
-    text-decoration: none; /* Remove underline */
+    text-decoration: none;
 }
 
 #homeHeader button {
@@ -78,10 +78,6 @@ nav a {
     font-weight: bold;
 }
 
-/* nav a:hover {
-    border-bottom: black solid 1px;
-} */
-
 
 /*! MAIN CSS */
 
@@ -117,7 +113,7 @@ footer {
 
 #genre a {
     display: inline-block;
-    padding: 12px; /* Slightly larger padding */
+    padding: 12px;
     border: 1px solid white;
     border-radius: 10px;
     background-color: white;
@@ -125,8 +121,8 @@ footer {
 }
 
 #genre a:hover {
-    border-color: #1E40AF; /* Darker shade on hover */
-    transform: scale(1.05); /* Slight zoom effect */
+    border-color: #1E40AF;
+    transform: scale(1.05);
 }
 
 #genre img {
@@ -216,6 +212,7 @@ footer {
 
 #login input {
     height: 40px;
+    padding: 10px;
 }
 
 #login button {
@@ -240,12 +237,12 @@ footer {
     background-color: #1E40AF;
 }
 
-button#signup {
-    color: black;
-    border: #2563EB 1px solid;
+#signupSubmit {
+    color: black!important;
+    border: #2563EB 1px solid!important;;
     margin-top: 1rem;
     cursor: pointer;
-    background-color: white
+    background-color:white;
 }
 
 #login label {
