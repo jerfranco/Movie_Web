@@ -44,6 +44,7 @@ html, body {
     padding: 0.5rem 3.5vw;
     cursor: pointer;
     font-weight: bold;
+    font-size: 17px;
 }
 
 nav li {
@@ -333,9 +334,23 @@ footer {
     padding-bottom: 2rem;
 }
 
+#empty {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    color: #666;
+}
+
+#watchlist {
+    width: 85%;
+    margin: auto;
+}
+
 #watchlist ul {
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: 33% 33% 33%;
     /* padding: 2rem; */
     text-align: center;
     /* border: black solid 1px; */
@@ -344,14 +359,17 @@ footer {
 
 #watchHeading li {
     padding: 1rem;
+    border: black solid 1px;
+    font-weight: bold;
 }
+
 
 /* #watchlist li:not(:first-child) {
     padding: 5rem;
 } */
 
 #watchlist ul li {
-    border: black solid 1px;
+    /* border: black solid 1px; */
 }
 
 /* #watchlist > ul:not(#watchHeading) {
@@ -359,7 +377,11 @@ footer {
 } */
 
 #watchlist > ul:not(#watchHeading) li {
-    padding: 5rem;
+    /* padding: 5rem; */
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border: black solid 1px;
+
 }
 
 #watchlist > ul:not(#watchHeading) #checkbox {
@@ -370,13 +392,11 @@ footer {
     border: black solid 1px;
 }
 
-#review ul {
+/* #review ul {
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    /* padding: 0; */
-    /* border: black solid 1px; */
+    grid-template-columns: 25% 25% 25%;
     text-align: center;
-}
+} */
 
 #reviewHeading li{
     /* padding: 500px; */
