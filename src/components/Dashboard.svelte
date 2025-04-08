@@ -55,7 +55,7 @@
   {:else if error}
     <p class="error">Error: {error}</p>
   {:else if watchlist.length === 0}
-    <p>Your watchlist is empty</p>
+    <p id="empty">Your watchlist is empty</p>
   {:else}
     <div id="watchlist">
       <ul id="watchHeading">
