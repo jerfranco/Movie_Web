@@ -11,6 +11,7 @@
   import comedyGenre from "./images/comedy-genre.svg";
   import horrorGenre from "./images/horror-genre.svg";
   import sciFiGenre from "./images/sci_fi-genre.svg";
+  import search from "./images/searchIcon.png";
 
   export let searchQuery = writable("");
   let searchComponent;
@@ -83,6 +84,7 @@
         )}
     >
       <img src={actionGenre} alt="Action Genre" />
+      <span>Action</span>
     </a>
     <a
       on:click={() =>
@@ -91,6 +93,7 @@
         )}
     >
       <img src={comedyGenre} alt="Comedy Genre" />
+      <span>Comedy</span>
     </a>
     <a
       on:click={() =>
@@ -99,6 +102,7 @@
         )}
     >
       <img src={horrorGenre} alt="Horror Genre" />
+      <span>Horror</span>
     </a>
     <a
       on:click={() =>
@@ -107,6 +111,7 @@
         )}
     >
       <img src={sciFiGenre} alt="Sci-Fi Genre" />
+      <span>Sci-Fi</span>
     </a>
   </div>
   <div id="searchMovie">
@@ -123,7 +128,7 @@
       id="searchButton"
       on:click={() => switchViewAndFetch("search", handleSearch)}
     >
-      <img src={sciFiGenre} />
+      <img src={search} />
     </button>
   </div>
   <div id="popMovies">
