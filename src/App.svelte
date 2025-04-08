@@ -84,6 +84,7 @@
         )}
     >
       <img src={actionGenre} alt="Action Genre" />
+      <span>Action</span>
     </a>
     <a
       on:click={() =>
@@ -92,6 +93,7 @@
         )}
     >
       <img src={comedyGenre} alt="Comedy Genre" />
+      <span>Comedy</span>
     </a>
     <a
       on:click={() =>
@@ -100,6 +102,7 @@
         )}
     >
       <img src={horrorGenre} alt="Horror Genre" />
+      <span>Horror</span>
     </a>
     <a
       on:click={() =>
@@ -108,6 +111,7 @@
         )}
     >
       <img src={sciFiGenre} alt="Sci-Fi Genre" />
+      <span>Sci-Fi</span>
     </a>
   </div>
   <div id="searchMovie">
