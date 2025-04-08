@@ -11,6 +11,7 @@
   import comedyGenre from "./images/comedy-genre.svg";
   import horrorGenre from "./images/horror-genre.svg";
   import sciFiGenre from "./images/sci_fi-genre.svg";
+  import search from "./images/searchIcon.png";
 
   export let searchQuery = writable("");
   let searchComponent;
@@ -123,7 +124,7 @@
       id="searchButton"
       on:click={() => switchViewAndFetch("search", handleSearch)}
     >
-      <img src={sciFiGenre} />
+      <img src={search} />
     </button>
   </div>
   <div id="popMovies">
