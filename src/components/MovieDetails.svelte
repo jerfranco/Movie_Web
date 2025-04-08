@@ -27,7 +27,7 @@
         // Store movie for later
         sessionStorage.setItem("watchlist_movie", JSON.stringify(movie));
         // Redirect to login page
-        window.location.href = "/src/user/login.html";
+        window.location.href = "/user/login.html";
       }
       return;
     }
